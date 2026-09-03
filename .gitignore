@@ -1,2 +1,5 @@
 .DS_Store
 *.png
+/app.js
+/styles.css
+/ledger-data.js
