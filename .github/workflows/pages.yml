@@ -22,6 +22,7 @@ jobs:
         run: |
           for f in icons-b64/*.b64; do base64 -d "$f" > "$(basename "${f%.b64}")"; done
           for f in src-b64/*.gz.b64; do base64 -d "$f" | gunzip > "$(basename "${f%.gz.b64}")"; done
+          for d in src-b64/*/; do n=$(basename "$d"); cat "$d"* | base64 -d | gunzip > "$n"; done
           ls -la *.png app.js styles.css ledger-data.js
       - uses: actions/configure-pages@v5
         with:
