@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ledger — Expense Tracker</title>
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ledger">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#e8e8ed" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="brand" data-page="dashboard">Ledger</a>
+      <div class="nav-tabs">
+        <button type="button" class="nav-tab active" data-page="dashboard">Dashboard</button>
+        <button type="button" class="nav-tab" data-page="trends">This Year</button>
+        <button type="button" class="nav-tab" data-page="reserves">Funds</button>
+        <button type="button" class="nav-tab" data-page="savings">Savings</button>
+      </div>
+      <div class="navbar-actions">
+        <button type="button" class="theme-toggle remote-only" id="refresh-toggle" aria-label="Refresh from GitHub" title="Refresh">↻</button>
+        <button type="button" class="theme-toggle" id="add-toggle" aria-label="Add transaction">➕</button>
+        <button type="button" class="theme-toggle" id="settings-toggle" aria-label="Settings">⚙️</button>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon theme-icon-light">☀️</span>
+          <span class="theme-icon theme-icon-dark">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <section class="page active" id="page-dashboard">
+      <div id="dashboard-content">
+        <div class="dash-topbar">
+          <div class="tx-month-pills-wrap dash-pills-wrap">
+            <div class="tx-month-pills" id="tx-month-pills" role="tablist" aria-label="Select month"></div>
+          </div>
+          <div class="dash-stats" id="dash-stats" aria-live="polite"></div>
+        </div>
+
+        <div class="dash-grid">
+          <div class="card dash-box dash-box-pie">
+            <div class="dash-box-head"><h2>Spending by Category</h2></div>
+            <div class="chart-wrap pie-chart-wrap">
+              <div class="pie-canvas-wrap">
+                <canvas id="pie-chart"></canvas>
+                <div class="pie-center" id="pie-center">
+                  <span class="pie-center-value" id="pie-center-value"></span>
+                  <span class="pie-center-label" id="pie-center-label"></span>
+                </div>
+              </div>
+              <div id="pie-legend" class="pie-legend-custom"></div>
+            </div>
+          </div>
+
+          <div class="card dash-box dash-box-calendar">
+            <div class="dash-box-head dash-cal-head">
+              <button type="button" class="btn-icon" id="cal-prev" aria-label="Previous month">←</button>
+              <h2 id="cal-month-title">Month</h2>
+              <button type="button" class="btn-icon" id="cal-next" aria-label="Next month">→</button>
+            </div>
+            <div class="calendar-weekdays">
+              <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+            </div>
+            <div class="calendar-grid" id="calendar-grid"></div>
+          </div>
+
+          <div class="card dash-box dash-box-tx">
+            <div class="dash-box-head">
+              <h2>Transactions</h2>
+              <div class="tx-filters">
+                <select class="tx-cat-filter" id="tx-cat-filter" aria-label="Filter by category"></select>
+                <input type="search" class="tx-search" id="tx-search" placeholder="Filter…" aria-label="Filter transactions">
+              </div>
+            </div>
+            <form class="tx-quick-add" id="tx-quick-add" autocomplete="off">
+              <div class="tx-quick-amount-wrap"><span>$</span><input type="number" id="qa-amount" step="0.01" min="0.01" placeholder="0.00" required aria-label="Amount"></div>
+              <select id="qa-category" aria-label="Category"></select>
+              <input type="text" id="qa-name" placeholder="Name" maxlength="60" aria-label="Name">
+              <button type="submit" class="tx-quick-add-btn" title="Add for today">＋</button>
+            </form>
+            <div class="dash-box-scroll" id="tx-month-body">
+              <div id="transactions-list"></div>
+              <p class="empty-inline hidden" id="transactions-empty">No transactions this month.</p>
+            </div>
+          </div>
+
+          <div class="card dash-box dash-box-insights">
+            <div class="dash-box-head"><h2>Highlights</h2></div>
+            <div class="dash-box-scroll" id="dash-insights"></div>
+          </div>
+
+          <div class="card dash-box dash-box-trend">
+            <div class="dash-box-head">
+              <div>
+                <h2>Spending Pace</h2>
+                <p class="section-hint" id="pace-chart-subtitle">Cumulative, day by day — vs last month &amp; this year's average</p>
+              </div>
+            </div>
+            <div class="chart-wrap dash-trend-wrap"><canvas id="pace-chart"></canvas></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="empty-state hidden" id="dashboard-empty">
+        <div class="empty-icon">📊</div>
+        <h2>No transactions yet</h2>
+        <p>Paste your first transactions to get started.</p>
+        <button type="button" class="btn btn-primary" id="dashboard-open-add">Paste &amp; Import</button>
+      </div>
+    </section>
+
+    <section class="page" id="page-trends">
+      <header class="page-header"><h1>This Year</h1></header>
+      <div class="trends-grid">
+        <div class="card chart-card trends-span">
+          <div class="chart-header">
+            <div>
+              <h2 id="bar-chart-title">Monthly Spending</h2>
+              <p class="section-hint" id="bar-chart-subtitle">This year</p>
+            </div>
+            <button type="button" class="btn btn-secondary btn-sm" id="bar-chart-stack-toggle">By category</button>
+          </div>
+          <div class="chart-wrap chart-wrap-yearly"><canvas id="bar-chart"></canvas></div>
+        </div>
+
+        <div class="card">
+          <h2>Spending by Category</h2>
+          <p class="section-hint" id="cat-year-sub">This year</p>
+          <div class="cat-year-list" id="cat-year-list"></div>
+        </div>
+
+        <div class="card chart-card dashboard-variance-card">
+          <div class="chart-header">
+            <div>
+              <h2>Monthly Variance</h2>
+              <p class="section-hint">Income minus daily expenses (excludes rent &amp; tuition)</p>
+            </div>
+            <span class="variance-total" id="variance-total" title="Sum of all months this year"></span>
+          </div>
+          <div class="chart-wrap chart-wrap-variance"><canvas id="variance-chart"></canvas></div>
+        </div>
+
+        <div class="card chart-card trends-span">
+          <h2>Categories, Month by Month</h2>
+          <p class="section-hint">Each category's monthly spend since January</p>
+          <div class="chart-wrap chart-wrap-catmonth"><canvas id="cat-month-chart"></canvas></div>
+        </div>
+
+        <div class="card trends-span">
+          <h2>Month by Month</h2>
+          <p class="section-hint">Every month at a glance — spot the pattern</p>
+          <div class="trends-table-wrap">
+            <table class="trends-table">
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th class="num">Expenses</th>
+                  <th class="num">vs Prev</th>
+                  <th class="num">Avg/Day</th>
+                  <th>Top Category</th>
+                  <th class="num">Net</th>
+                </tr>
+              </thead>
+              <tbody id="trends-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="page-reserves">
+      <header class="page-header">
+        <h1>Funds</h1>
+        <p class="section-hint">Dad's fund · rent · tuition — filled from statements via Paste &amp; Import (categories: Dad, Rent, Tuition)</p>
+      </header>
+      <div class="summary-grid funds-summary">
+        <div class="summary-card">
+          <span class="summary-label">From Dad</span>
+          <span class="summary-value income" id="funds-in">$0.00</span>
+          <span class="summary-sub" id="funds-in-sub"></span>
+        </div>
+        <div class="summary-card">
+          <span class="summary-label">Rent Paid</span>
+          <span class="summary-value expense" id="funds-rent">$0.00</span>
+          <span class="summary-sub" id="funds-rent-sub"></span>
+        </div>
+        <div class="summary-card">
+          <span class="summary-label">Tuition Paid</span>
+          <span class="summary-value expense" id="funds-tuition">$0.00</span>
+          <span class="summary-sub" id="funds-tuition-sub"></span>
+        </div>
+        <div class="summary-card">
+          <span class="summary-label" id="funds-flex-label">Left in Fund</span>
+          <span class="summary-value balance" id="funds-flex">$0.00</span>
+          <span class="summary-sub" id="funds-flex-sub"></span>
+        </div>
+      </div>
+      <div id="funds-list"></div>
+    </section>
+
+    <section class="page" id="page-savings">
+      <header class="page-header">
+        <h1>Savings</h1>
+        <p class="section-hint">Where your money is actually sitting &mdash; not just how much</p>
+      </header>
+      <div class="summary-grid savings-summary">
+        <div class="summary-card">
+          <span class="summary-label">Total Set Aside</span>
+          <span class="summary-value balance" id="savings-total">$0.00</span>
+          <span class="summary-sub" id="savings-total-sub"></span>
+        </div>
+        <div class="summary-card">
+          <span class="summary-label">Recoverable</span>
+          <span class="summary-value income" id="savings-recoverable">$0.00</span>
+          <span class="summary-sub" id="savings-recoverable-sub"></span>
+        </div>
+        <div class="summary-card">
+          <span class="summary-label">Invested</span>
+          <span class="summary-value" id="savings-invested">$0.00</span>
+          <span class="summary-sub" id="savings-invested-sub"></span>
+        </div>
+        <div class="summary-card">
+          <span class="summary-label">Needs Action</span>
+          <span class="summary-value expense" id="savings-action">$0.00</span>
+          <span class="summary-sub" id="savings-action-sub"></span>
+        </div>
+      </div>
+      <div id="savings-list"></div>
+    </section>
+  </main>
+
+  <!-- Add transaction slide-in panel -->
+  <div class="slide-backdrop hidden" id="add-backdrop"></div>
+  <aside class="slide-panel" id="add-panel" aria-hidden="true">
+    <div class="slide-panel-header">
+      <h2>Paste &amp; Import</h2>
+      <button type="button" class="btn-icon" id="add-close" aria-label="Close">×</button>
+    </div>
+    <div class="slide-panel-body">
+      <div class="manage-panel active" id="manage-import">
+        <textarea id="import-text" class="paste-textarea" rows="10" placeholder="Paste lines here: YYYY-MM-DD | Description | Amount | Category"></textarea>
+        <div class="form-actions paste-actions">
+          <button type="button" class="btn btn-primary" id="import-extract">Extract</button>
+        </div>
+        <div class="import-preview hidden" id="import-preview">
+          <p class="import-count" id="import-count">Found 0 transactions</p>
+          <div class="import-table-wrap">
+            <table class="import-table">
+              <thead>
+                <tr>
+                  <th class="col-check"><input type="checkbox" id="import-check-all" checked aria-label="Select all"></th>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th class="col-amount">Amount</th>
+                  <th>Category</th>
+                </tr>
+              </thead>
+              <tbody id="import-table-body"></tbody>
+            </table>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-primary" id="import-confirm">Import Selected</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Settings slide-in panel -->
+  <div class="slide-backdrop hidden" id="settings-backdrop"></div>
+  <aside class="slide-panel" id="settings-panel" aria-hidden="true">
+    <div class="slide-panel-header">
+      <h2>Settings</h2>
+      <button type="button" class="btn-icon" id="settings-close" aria-label="Close">×</button>
+    </div>
+    <div class="slide-panel-body">
+      <div class="settings-data-actions">
+        <button type="button" class="btn btn-secondary btn-block" id="export-data-btn">Export Data</button>
+        <button type="button" class="btn btn-secondary btn-block" id="import-data-btn">Import Data</button>
+        <input type="file" id="import-data-file" accept=".json,application/json" hidden>
+        <button type="button" class="btn btn-secondary btn-block" id="save-data-file-btn">Save Data File</button>
+        <p class="data-file-status muted" id="data-file-status"></p>
+        <p class="remote-note muted hidden" id="remote-note">Add expenses by telling Claude — they land in the GitHub inbox and show up here on refresh. Entries added directly on this device are temporary and get replaced by the next data update.</p>
+      </div>
+      <h3 class="section-title">Categories</h3>
+      <div class="category-list" id="category-list"></div>
+      <button type="button" class="btn btn-secondary btn-block" id="add-category-btn">+ Add new category</button>
+      <button type="button" class="btn btn-secondary btn-block" id="export-expenses-text-btn">Export Expenses as Text</button>
+      <div class="card add-category-form hidden" id="add-category-form">
+        <h3>New Category</h3>
+        <div class="form-row form-row-3">
+          <div class="form-group form-group-sm">
+            <label for="new-cat-emoji">Emoji</label>
+            <input type="text" id="new-cat-emoji" maxlength="4" placeholder="🍔">
+          </div>
+          <div class="form-group">
+            <label for="new-cat-name">Name</label>
+            <input type="text" id="new-cat-name" placeholder="Category name">
+          </div>
+          <div class="form-group form-group-sm">
+            <label for="new-cat-color">Color</label>
+            <input type="color" id="new-cat-color" value="#888888">
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="new-cat-cancel">Cancel</button>
+          <button type="button" class="btn btn-primary" id="new-cat-save">Save Category</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="modal-overlay hidden" id="category-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="category-modal-heading">
+          <h2 id="category-modal-title">Category</h2>
+          <span class="category-modal-sub" id="category-modal-sub"></span>
+        </div>
+        <button type="button" class="btn-icon modal-close" id="category-modal-close" aria-label="Close">×</button>
+      </div>
+      <div class="modal-body" id="category-modal-list"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="day-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="day-modal-title">Transactions</h2>
+        <button type="button" class="btn-icon modal-close" id="day-modal-close">×</button>
+      </div>
+      <div class="modal-body" id="day-modal-list"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="export-text-modal">
+    <div class="modal modal-export-text">
+      <div class="modal-header">
+        <h2>Export Expenses</h2>
+        <button type="button" class="btn-icon modal-close" id="export-text-close" aria-label="Close">×</button>
+      </div>
+      <div class="modal-body">
+        <p class="export-text-lead">Copy or download expenses in import format (one line per transaction):</p>
+        <textarea id="export-text-area" class="paste-textarea export-text-area" rows="12" readonly aria-label="Exported expense lines"></textarea>
+        <div class="form-actions export-text-actions">
+          <button type="button" class="btn btn-secondary" id="export-text-copy">Copy to Clipboard</button>
+          <button type="button" class="btn btn-primary" id="export-text-download">Download .txt</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="confirm-modal">
+    <div class="modal modal-sm">
+      <h2 id="confirm-title">Confirm</h2>
+      <p id="confirm-message"></p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" id="confirm-cancel">Cancel</button>
+        <button type="button" class="btn btn-danger" id="confirm-ok">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toast-container"></div>
+  <script defer src="ledger-data.js" onerror="window.LEDGER_FILE_DATA=null"></script>
+  <script defer src="app.js"></script>
+</body>
+</html>
