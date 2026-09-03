@@ -1,2 +1,10 @@
-# ledger
-Personal expense tracker — static app on GitHub Pages, data updated by Claude
+# Ledger
+
+Danial's personal expense tracker — a static web app served by GitHub Pages.
+
+- `index.html`, `app.js`, `styles.css` — the app (works offline-ish, installable to the iPhone home screen)
+- `ledger-data.js` — the base data snapshot (all transactions, categories, funds, savings)
+- `inbox/YYYY-MM.txt` — new transactions appended by Claude from the phone, merged on top at runtime (see `inbox/README.md`)
+- `icons-b64/` — PNG icons as base64 text; the Pages workflow decodes them at deploy time
+
+Deploys automatically on every push to `main`.
