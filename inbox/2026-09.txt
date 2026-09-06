@@ -1,14 +1,98 @@
 # September 2026 — appended by Claude from the phone
 2026-07-31 | Wealthsimple interest | 1.11 | Income
+2026-08-18 | 4 Brothers Pizza | 8.04 | Launch & Coffee
+2026-08-18 | Tim Hortons | 5.13 | Launch & Coffee
+2026-08-18 | Basha Waterfront | 12.80 | Launch & Coffee
 2026-08-19 | BCIT | 7000.00 | Tuition
+2026-08-19 | Straight Outta Brooklyn Pizza | 15.23 | Launch & Coffee
+2026-08-19 | Caffe Reggio | 7.37 | Launch & Coffee
+2026-08-19 | Compass Card | 10.00 | Transport
+2026-08-19 | McDonald's | 7.35 | Launch & Coffee
 2026-08-20 | West Coast Sigh Pay | 1815.84 | Income
+2026-08-20 | Subway | 10.49 | Launch & Coffee
+2026-08-20 | Caffe Reggio | 7.37 | Launch & Coffee
+2026-08-21 | Nesters Market | 11.00 | Groceries
+2026-08-21 | IGA | 18.96 | Groceries
+2026-08-21 | McDonald's | 7.14 | Launch & Coffee
+2026-08-21 | Village Taphouse | 61.48 | Leisure
+2026-08-21 | Starbucks | 15.37 | Launch & Coffee
+2026-08-21 | Microsoft 365 | 2.24 | Bills
+2026-08-21 | Lime | 1.68 | Transport
+2026-08-21 | Compass Card | 10.00 | Transport
+2026-08-22 | Home Depot | 69.38 | Shopping
+2026-08-22 | InBtwn Cafe | 6.95 | Launch & Coffee
+2026-08-22 | Uber | 6.53 | Transport
+2026-08-22 | Uber | 12.98 | Transport
+2026-08-22 | Uber | 13.66 | Transport
+2026-08-22 | 247 Smoke City | 49.82 | Smoke & Alcohol
+2026-08-22 | Lyft | 7.95 | Transport
+2026-08-23 | Starbucks | 5.88 | Launch & Coffee
+2026-08-23 | Subway | 11.54 | Launch & Coffee
+2026-08-23 | Uber | 11.68 | Transport
 2026-08-24 | BCIT | 1231.22 | Tuition
 2026-08-24 | Steamoji | 58.34 | Income
+2026-08-24 | McDonald's | 31.72 | Launch & Coffee
+2026-08-24 | McDonald's | 1.46 | Launch & Coffee
+2026-08-24 | Lime | 10.92 | Transport
+2026-08-24 | Apple.com/Bill | 31.36 | Bills
+2026-08-24 | Subway | 12.59 | Launch & Coffee
+2026-08-25 | Telus Mobility | 110.86 | Bills
+2026-08-25 | Compass Card | 10.00 | Transport
 2026-08-26 | New home damage deposit | 900.00 | Rent
+2026-08-26 | Starbucks | 7.56 | Launch & Coffee
+2026-08-26 | IGA | 8.99 | Groceries
+2026-08-26 | Monaco Cafe | 8.03 | Launch & Coffee
+2026-08-26 | Freshslice Pizza | 3.41 | Launch & Coffee
+2026-08-26 | McDonald's | 3.52 | Launch & Coffee
+2026-08-26 | Uber | 26.30 | Transport
+2026-08-26 | Ignite Pizzeria | 6.08 | Launch & Coffee
+2026-08-26 | McDonald's | 1.05 | Launch & Coffee
 2026-08-27 | Transfer to TFSA | 300.00 | Savings
+2026-08-27 | Davie Street YIG | 32.92 | Groceries
+2026-08-27 | Uber | 29.05 | Transport
+2026-08-27 | Uber | 24.14 | Transport
+2026-08-27 | Subway | 13.67 | Launch & Coffee
+2026-08-27 | Compass Card | 10.00 | Transport
+2026-08-28 | Lime Prime | 6.71 | Bills
+2026-08-28 | 16th Street Liquor Store | 41.04 | Smoke & Alcohol
+2026-08-28 | McDonald's | 16.07 | Launch & Coffee
+2026-08-29 | Lyft | 48.94 | Transport
+2026-08-29 | Apple.com/Bill | 1.44 | Bills
+2026-08-29 | Uber | 15.32 | Transport
+2026-08-29 | Uber | 28.49 | Transport
+2026-08-29 | Uber | 16.75 | Transport
+2026-08-29 | InBtwn Cafe | 6.95 | Launch & Coffee
+2026-08-30 | Shoppers Drug Mart | 21.73 | Personal & Health
+2026-08-30 | Easy Day Store | 4.99 | Smoke & Alcohol
+2026-08-30 | Starbucks | 6.25 | Launch & Coffee
+2026-08-30 | Basha Waterfront | 13.11 | Launch & Coffee
+2026-08-30 | Uber Eats | 26.99 | Leisure
+2026-08-30 | Krave Kulture | 8.82 | Smoke & Alcohol
 2026-08-31 | Wealthsimple interest | 10.44 | Income
+2026-08-31 | Lilium Bakery | 32.91 | Launch & Coffee
+2026-08-31 | InBtwn Cafe | 6.95 | Launch & Coffee
+2026-08-31 | Subway | 7.34 | Launch & Coffee
+2026-08-31 | Subway | 17.85 | Launch & Coffee
 2026-09-01 | Fairstone | 38.00 | Bills
+2026-09-01 | Subway | 13.66 | Launch & Coffee
+2026-09-01 | Uber | 9.26 | Transport
+2026-09-01 | Compass Card | 10.00 | Transport
+2026-09-02 | Subway | 8.67 | Launch & Coffee
+2026-09-02 | Apple.com/Bill | 6.71 | Bills
+2026-09-02 | Apple.com/Bill | 3.21 | Bills
 2026-09-03 | VanHaus Gruppe | 2600.00 | Rent
 2026-09-03 | West Coast Sigh Pay | 1917.06 | Income
 2026-09-03 | Document translation (ICBC) | 30.00 | Other
+2026-09-03 | JJ Bean Coffee | 13.40 | Launch & Coffee
+2026-09-03 | Nesters Market | 10.49 | Groceries
+2026-09-03 | Compass Card | 3.50 | Transport
+2026-09-03 | Compass Card | 3.50 | Transport
 2026-09-04 | RBC Monthly Fee | 12.95 | Bills
+2026-09-04 | Uber | 17.09 | Transport
+2026-09-04 | Uber | 47.83 | Transport
+2026-09-04 | Tim Hortons | 7.22 | Launch & Coffee
+2026-09-04 | Davie Street YIG | 28.28 | Groceries
+2026-09-05 | Freshslice Pizza | 17.17 | Launch & Coffee
+2026-09-05 | 247 Smoke City | 49.82 | Smoke & Alcohol
+2026-09-05 | McDonald's | 1.05 | Launch & Coffee
+2026-09-05 | Subway | 12.42 | Launch & Coffee
