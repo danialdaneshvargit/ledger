@@ -10,4 +10,5 @@
 2026-09-01 | Fairstone | 38.00 | Bills
 2026-09-03 | VanHaus Gruppe | 2600.00 | Rent
 2026-09-03 | West Coast Sigh Pay | 1917.06 | Income
+2026-09-03 | Document translation (ICBC) | 30.00 | Other
 2026-09-04 | RBC Monthly Fee | 12.95 | Bills
