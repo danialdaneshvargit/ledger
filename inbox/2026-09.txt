@@ -140,6 +140,7 @@
 2026-09-18 | Compass Card | 10.00 | Transport
 2026-09-18 | Compass Card | 10.00 | Transport
 2026-09-18 | Uber Eats | 35.08 | Leisure
+2026-09-18 | Coastal Ford — vehicle down payment | 1000.00 | Savings
 2026-09-19 | 247 Smoke City | 49.82 | Smoke & Alcohol
 2026-09-19 | ICBC knowledge test | 15.00 | Other
 2026-09-19 | Whole Foods Market | 17.61 | Groceries
