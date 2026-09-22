@@ -132,7 +132,7 @@
 2026-09-15 | Whole Foods Market | 9.90 | Groceries
 2026-09-15 | Uber | 9.94 | Transport
 2026-09-15 | Compass Card | 10.00 | Transport
-2026-09-15 | Reza Pastry | 70.20 | Launch & Coffee
+2026-09-15 | Reza Pastry (gift) | 70.20 | Shopping
 2026-09-16 | Aria Market | 34.06 | Groceries
 2026-09-16 | Compass Card | 10.00 | Transport
 2026-09-16 | Starbucks | 10.00 | Launch & Coffee
@@ -149,3 +149,6 @@
 2026-09-20 | Thierry (Ambleside) | 8.98 | Launch & Coffee
 2026-09-20 | Dollarama (snack) | 3.78 | Launch & Coffee
 2026-09-20 | Cheese Slap | 16.08 | Launch & Coffee
+2026-09-17 | West Coast Sigh Pay (Wealthsimple) | 1446.43 | Income
+2026-09-22 | Reza Pastry (gift) | 106.00 | Shopping
+2026-09-22 | Sadra Football | 25.00 | Personal & Health
