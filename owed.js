@@ -5,6 +5,14 @@
 renderInsights = function () {};
 renderPaceChart = function () { renderBarChart(); };
 
+// Savings is money set aside, not spending — keep it out of the pie chart.
+const _renderPieChartBase = renderPieChart;
+renderPieChart = function (byCat) {
+  const copy = { ...(byCat || {}) };
+  delete copy['cat-savings'];
+  return _renderPieChartBase(copy);
+};
+
 // ---- What I Owe (owed.txt in the repo root) -------------------------
 // One upcoming payment / debt per line:
 //   YYYY-MM-DD | What | Amount | Note (optional)

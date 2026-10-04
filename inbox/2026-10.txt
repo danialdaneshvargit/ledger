@@ -1,0 +1,71 @@
+# October 2026 — appended by Claude from the phone
+2026-09-18 | Metro Motors deposit (refund pending) | 500.00 | Vehicle
+2026-09-19 | Mac Truck (food truck) | 6.00 | Launch & Coffee
+2026-09-21 | IGA | 15.01 | Groceries
+2026-09-21 | Breka Bakery & Cafe | 29.93 | Launch & Coffee
+2026-09-21 | Uber | 50.53 | Transport
+2026-09-21 | Microsoft 365 | 2.24 | Bills
+2026-09-22 | Compass Card | 3.50 | Transport
+2026-09-22 | Compass Card | 6.70 | Transport
+2026-09-22 | IGA | 41.34 | Groceries
+2026-09-22 | Uber | 29.09 | Transport
+2026-09-22 | Uber | 8.53 | Transport
+2026-09-22 | Lyft | 19.98 | Transport
+2026-09-22 | Deep Cove Pizza | 14.00 | Launch & Coffee
+2026-09-22 | Waves Coffee | 15.74 | Launch & Coffee
+2026-09-22 | Compass Card | 10.00 | Transport
+2026-09-23 | Yaas Grill | 12.59 | Launch & Coffee
+2026-09-23 | Yaas Grill | 19.81 | Launch & Coffee
+2026-09-23 | Breka Bakery & Cafe | 6.76 | Launch & Coffee
+2026-09-23 | Lyft | 54.94 | Transport
+2026-09-23 | Uber | 28.24 | Transport
+2026-09-23 | Compass Card | 10.00 | Transport
+2026-09-24 | Telus Mobility | 117.03 | Bills
+2026-09-24 | Apple.com/Bill | 19.03 | Bills
+2026-09-24 | Uber | 32.53 | Transport
+2026-09-24 | RBC overlimit fee | 29.00 | Bills
+2026-09-25 | D6 | 12.42 | Launch & Coffee
+2026-09-25 | Compass Card | 10.00 | Transport
+2026-09-25 | The Wine Thief | 14.10 | Smoke & Alcohol
+2026-09-25 | Canna Cabana | 9.42 | Smoke & Alcohol
+2026-09-25 | Breka Bakery & Cafe | 9.12 | Launch & Coffee
+2026-09-25 | Uber | 15.98 | Transport
+2026-09-26 | Hot Pie Pizza | 36.00 | Launch & Coffee
+2026-09-26 | Instacart | 71.48 | Groceries
+2026-09-26 | InBtwn Cafe | 11.17 | Launch & Coffee
+2026-09-26 | Dave's Hot Chicken | 3.45 | Launch & Coffee
+2026-09-27 | Yaas Grill | 46.32 | Leisure
+2026-09-27 | Dominion Self-Park | 0.98 | Transport
+2026-09-27 | Bisou Bake House | 19.11 | Launch & Coffee
+2026-09-27 | Subway | 9.33 | Launch & Coffee
+2026-09-27 | Coastal Ford — truck payment | 1000.00 | Vehicle
+2026-09-27 | Compass Card | 10.00 | Transport
+2026-09-28 | Breka Bakery & Cafe | 17.35 | Launch & Coffee
+2026-09-28 | ICBC Driver Services Centre | 31.00 | Other
+2026-09-28 | ICBC Driver Services Centre | 50.00 | Other
+2026-09-28 | Lime Prime | 6.71 | Bills
+2026-09-28 | Provisions Kitsilano | 11.87 | Launch & Coffee
+2026-09-29 | One Burrard Place | 20.62 | Other
+2026-09-29 | Wendy's | 9.44 | Launch & Coffee
+2026-09-30 | Shoppers Drug Mart | 15.74 | Personal & Health
+2026-09-30 | IGA | 23.54 | Groceries
+2026-09-30 | Starbucks | 3.20 | Launch & Coffee
+2026-09-30 | Romano's Pizza | 18.40 | Launch & Coffee
+2026-10-01 | Chevron (gas) | 115.05 | Transport
+2026-10-01 | Chevron | 1.95 | Transport
+2026-10-01 | Chevron | 1.50 | Transport
+2026-10-01 | Craft (Vancouver) | 43.49 | Leisure
+2026-10-01 | Apple.com/Bill | 4.47 | Bills
+2026-10-01 | Nesters Market | 14.25 | Groceries
+2026-10-02 | Brunette Cannabis Co. | 7.06 | Smoke & Alcohol
+2026-10-02 | Apple.com/Bill | 31.36 | Bills
+2026-10-02 | Apple.com/Bill | 6.71 | Bills
+2026-10-02 | Walmart | 47.03 | Groceries
+2026-10-02 | IKEA Coquitlam | 3.94 | Launch & Coffee
+2026-10-02 | McDonald's | 7.02 | Launch & Coffee
+2026-10-02 | Tim Hortons | 6.41 | Launch & Coffee
+2026-10-03 | Walmart | 77.51 | Groceries
+2026-10-03 | Costco | 1.64 | Launch & Coffee
+2026-10-03 | Parsian Market | 8.99 | Groceries
+2026-10-03 | GLO | 12.00 | Launch & Coffee
+2026-10-03 | GLO | 18.75 | Launch & Coffee
