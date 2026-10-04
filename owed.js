@@ -13,6 +13,20 @@ renderPieChart = function (byCat) {
   return _renderPieChartBase(copy);
 };
 
+// "Launch & Coffee" is now "Food & Coffee" (old inbox lines still map to it).
+(function () {
+  const c = DEFAULT_CATEGORIES.find((x) => x.id === 'cat-to-go');
+  if (c) c.name = 'Food & Coffee';
+  CATEGORY_NAME_ALIASES['launch & coffee'] = 'cat-to-go';
+  CATEGORY_NAME_ALIASES['food & coffee'] = 'cat-to-go';
+  CATEGORY_NAME_ALIASES['food and coffee'] = 'cat-to-go';
+})();
+const _renderPageBase = renderPage;
+renderPage = function (page) {
+  (state.categories || []).forEach((c) => { if (c.id === 'cat-to-go') c.name = 'Food & Coffee'; });
+  return _renderPageBase(page);
+};
+
 // ---- What I Owe (owed.txt in the repo root) -------------------------
 // One upcoming payment / debt per line:
 //   YYYY-MM-DD | What | Amount | Note (optional)

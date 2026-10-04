@@ -3,3 +3,4 @@
 # When something is paid off, delete its line.
 2026-11-18 | Fairstone · Best Buy plan 1 | 860.77 | Same as Cash — pay in full to waive $228.26 interest
 2026-11-27 | Fairstone · Best Buy plan 2 | 1398.83 | Same as Cash — pay in full to waive $356.73 interest
+2026-10-25 | BC Government | 1000.00 | $1,000 left of $1,100 — $200/month (next $200 around Oct 25)

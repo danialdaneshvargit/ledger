@@ -34,7 +34,7 @@
 2026-09-26 | Instacart | 71.48 | Groceries
 2026-09-26 | InBtwn Cafe | 11.17 | Launch & Coffee
 2026-09-26 | Dave's Hot Chicken | 3.45 | Launch & Coffee
-2026-09-27 | Yaas Grill | 46.32 | Leisure
+2026-09-27 | Yaas Grill | 46.32 | Food & Coffee
 2026-09-27 | Dominion Self-Park | 0.98 | Transport
 2026-09-27 | Bisou Bake House | 19.11 | Launch & Coffee
 2026-09-27 | Subway | 9.33 | Launch & Coffee
@@ -64,8 +64,19 @@
 2026-10-02 | IKEA Coquitlam | 3.94 | Launch & Coffee
 2026-10-02 | McDonald's | 7.02 | Launch & Coffee
 2026-10-02 | Tim Hortons | 6.41 | Launch & Coffee
-2026-10-03 | Walmart | 77.51 | Groceries
+2026-10-03 | Walmart (pants) | 60.00 | Shopping
+2026-10-03 | Walmart | 17.51 | Groceries
 2026-10-03 | Costco | 1.64 | Launch & Coffee
 2026-10-03 | Parsian Market | 8.99 | Groceries
-2026-10-03 | GLO | 12.00 | Launch & Coffee
-2026-10-03 | GLO | 18.75 | Launch & Coffee
+2026-10-03 | GLO (rave club) | 12.00 | Leisure
+2026-10-03 | GLO (rave club) | 18.75 | Leisure
+# RBC chequing + Wealthsimple (sent Oct 3)
+2026-09-11 | Dad — via EXTREME | 5000.00 | Dad
+2026-09-21 | Greycor (cash — not deposited yet; don't log the deposit again) | 1500.00 | Income
+2026-09-25 | BC Government (1st payment of $1,100) | 100.00 | Other
+2026-09-28 | ICBC auto insurance | 199.01 | Bills
+2026-09-30 | Wealthsimple interest | 7.38 | Income
+2026-10-01 | Kenson Realty — rent | 1800.00 | Rent
+2026-10-01 | Fairstone | 38.00 | Bills
+2026-10-01 | McDonald's | 16.04 | Food & Coffee
+2026-10-01 | Greycor Project pay (Wealthsimple) | 869.20 | Income
