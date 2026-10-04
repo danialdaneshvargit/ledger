@@ -1,0 +1,47 @@
+/* Layout overrides (Oct 2026): Monthly Spending chart lives at the bottom of the
+   dashboard; Highlights + Spending Pace removed. */
+.dash-grid {
+  grid-template-rows: 400px 420px 360px;
+  grid-template-areas:
+    "pie calendar"
+    "tx tx"
+    "bar bar";
+}
+.dash-box-bar { grid-area: bar; }
+.dash-bar-wrap { flex: 1; min-height: 0; position: relative; }
+.dash-bar-wrap canvas { display: block; width: 100% !important; height: 100% !important; }
+@media (max-width: 900px) {
+  .dash-grid { grid-template-areas: "pie" "calendar" "tx" "bar"; }
+}
+
+/* What I Owe (Funds page) */
+.owed-card { padding: 16px; margin-bottom: 14px; }
+.owed-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.owed-head h2 { margin-bottom: 0; }
+.owed-head .section-hint { margin: 4px 0 0; }
+.owed-total { font-size: 1.375rem; font-weight: 700; color: var(--expense); white-space: nowrap; }
+.owed-rows { display: flex; flex-direction: column; gap: 8px; }
+.owed-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 12px; border-radius: 10px;
+  border-left: 4px solid var(--text-muted);
+  background: rgba(127, 127, 127, 0.08);
+}
+.owed-main, .owed-side { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.owed-side { align-items: flex-end; text-align: right; flex-shrink: 0; }
+.owed-what { font-weight: 600; }
+.owed-note { font-size: 0.75rem; color: var(--text-secondary); }
+.owed-amt { font-size: 1rem; }
+.owed-due { font-size: 0.75rem; color: var(--text-secondary); white-space: nowrap; }
+.owed-when { font-weight: 600; }
+.owed-overdue { border-left-color: #FF453A; }
+.owed-overdue .owed-when { color: #FF453A; }
+.owed-soon { border-left-color: #FF453A; }
+.owed-soon .owed-when { color: #FF453A; }
+.owed-near { border-left-color: #FF9F0A; }
+.owed-near .owed-when { color: #FF9F0A; }
+.owed-later { border-left-color: #30D158; }
+@media (max-width: 600px) {
+  .owed-row { flex-direction: column; align-items: flex-start; }
+  .owed-side { align-items: flex-start; text-align: left; }
+}

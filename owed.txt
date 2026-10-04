@@ -1,0 +1,5 @@
+# What I Owe — shown on the Funds page of the Ledger.
+# One line per upcoming payment:  YYYY-MM-DD (due date) | What | Amount | Note
+# When something is paid off, delete its line.
+2026-11-18 | Fairstone · Best Buy plan 1 | 860.77 | Same as Cash — pay in full to waive $228.26 interest
+2026-11-27 | Fairstone · Best Buy plan 2 | 1398.83 | Same as Cash — pay in full to waive $356.73 interest
