@@ -14,6 +14,7 @@
   <meta name="theme-color" content="#e8e8ed" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="owed.css">
   <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
@@ -22,7 +23,6 @@
       <a href="#" class="brand" data-page="dashboard">Ledger</a>
       <div class="nav-tabs">
         <button type="button" class="nav-tab active" data-page="dashboard">Dashboard</button>
-        <button type="button" class="nav-tab" data-page="trends">This Year</button>
         <button type="button" class="nav-tab" data-page="reserves">Funds</button>
         <button type="button" class="nav-tab" data-page="savings">Savings</button>
       </div>
@@ -95,19 +95,15 @@
             </div>
           </div>
 
-          <div class="card dash-box dash-box-insights">
-            <div class="dash-box-head"><h2>Highlights</h2></div>
-            <div class="dash-box-scroll" id="dash-insights"></div>
-          </div>
-
-          <div class="card dash-box dash-box-trend">
+          <div class="card dash-box dash-box-bar">
             <div class="dash-box-head">
               <div>
-                <h2>Spending Pace</h2>
-                <p class="section-hint" id="pace-chart-subtitle">Cumulative, day by day — vs last month &amp; this year's average</p>
+                <h2 id="bar-chart-title">Monthly Spending</h2>
+                <p class="section-hint" id="bar-chart-subtitle">This year</p>
               </div>
+              <button type="button" class="btn btn-secondary btn-sm" id="bar-chart-stack-toggle">By category</button>
             </div>
-            <div class="chart-wrap dash-trend-wrap"><canvas id="pace-chart"></canvas></div>
+            <div class="chart-wrap dash-bar-wrap"><canvas id="bar-chart"></canvas></div>
           </div>
         </div>
 
@@ -117,65 +113,6 @@
         <h2>No transactions yet</h2>
         <p>Paste your first transactions to get started.</p>
         <button type="button" class="btn btn-primary" id="dashboard-open-add">Paste &amp; Import</button>
-      </div>
-    </section>
-
-    <section class="page" id="page-trends">
-      <header class="page-header"><h1>This Year</h1></header>
-      <div class="trends-grid">
-        <div class="card chart-card trends-span">
-          <div class="chart-header">
-            <div>
-              <h2 id="bar-chart-title">Monthly Spending</h2>
-              <p class="section-hint" id="bar-chart-subtitle">This year</p>
-            </div>
-            <button type="button" class="btn btn-secondary btn-sm" id="bar-chart-stack-toggle">By category</button>
-          </div>
-          <div class="chart-wrap chart-wrap-yearly"><canvas id="bar-chart"></canvas></div>
-        </div>
-
-        <div class="card">
-          <h2>Spending by Category</h2>
-          <p class="section-hint" id="cat-year-sub">This year</p>
-          <div class="cat-year-list" id="cat-year-list"></div>
-        </div>
-
-        <div class="card chart-card dashboard-variance-card">
-          <div class="chart-header">
-            <div>
-              <h2>Monthly Variance</h2>
-              <p class="section-hint">Income minus daily expenses (excludes rent &amp; tuition)</p>
-            </div>
-            <span class="variance-total" id="variance-total" title="Sum of all months this year"></span>
-          </div>
-          <div class="chart-wrap chart-wrap-variance"><canvas id="variance-chart"></canvas></div>
-        </div>
-
-        <div class="card chart-card trends-span">
-          <h2>Categories, Month by Month</h2>
-          <p class="section-hint">Each category's monthly spend since January</p>
-          <div class="chart-wrap chart-wrap-catmonth"><canvas id="cat-month-chart"></canvas></div>
-        </div>
-
-        <div class="card trends-span">
-          <h2>Month by Month</h2>
-          <p class="section-hint">Every month at a glance — spot the pattern</p>
-          <div class="trends-table-wrap">
-            <table class="trends-table">
-              <thead>
-                <tr>
-                  <th>Month</th>
-                  <th class="num">Expenses</th>
-                  <th class="num">vs Prev</th>
-                  <th class="num">Avg/Day</th>
-                  <th>Top Category</th>
-                  <th class="num">Net</th>
-                </tr>
-              </thead>
-              <tbody id="trends-table-body"></tbody>
-            </table>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -206,6 +143,7 @@
           <span class="summary-sub" id="funds-flex-sub"></span>
         </div>
       </div>
+      <div id="owed-list"></div>
       <div id="funds-list"></div>
     </section>
 
@@ -375,5 +313,6 @@
   <div class="toast-container" id="toast-container"></div>
   <script defer src="ledger-data.js" onerror="window.LEDGER_FILE_DATA=null"></script>
   <script defer src="app.js"></script>
+  <script defer src="owed.js"></script>
 </body>
 </html>
