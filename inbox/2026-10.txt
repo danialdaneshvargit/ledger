@@ -82,3 +82,10 @@
 2026-10-01 | McDonald's | 16.04 | Food & Coffee
 2026-10-01 | Greycor Project pay (Wealthsimple) | 869.20 | Income
 2026-10-03 | Transfer to TFSA | 400.00 | Savings
+# Card payments (RBC chequing → RBC card) — kept as notes only, not counted:
+# 2026-09-04 | RBC card payment | 1800.00
+# 2026-09-18 | RBC card payment | 1000.00
+# 2026-09-25 | RBC card payment | 1000.00
+# 2026-09-29 | RBC card payment | 1000.00
+# 2026-10-03 | RBC card payment | 1000.00
+# 2026-10-03 | RBC card payment | 1000.00
