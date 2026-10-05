@@ -11,7 +11,7 @@
 .dash-bar-wrap { flex: 1; min-height: 0; position: relative; }
 .dash-bar-wrap canvas { display: block; width: 100% !important; height: 100% !important; }
 @media (max-width: 900px) {
-  .dash-grid { grid-template-areas: "pie" "calendar" "tx" "bar"; }
+  .dash-grid { grid-template-rows: none; grid-template-areas: "pie" "calendar" "tx" "bar"; }
 }
 
 /* What I Owe (Funds page) */
@@ -44,4 +44,33 @@
 @media (max-width: 600px) {
   .owed-row { flex-direction: column; align-items: flex-start; }
   .owed-side { align-items: flex-start; text-align: left; }
+}
+
+/* Dashboard (Sep 2026 →): five stat chips — Surplus, Income, Fixed, Spent, Left */
+body:not(.view-history) .dash-stats { grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr; }
+@media (max-width: 900px) {
+  body:not(.view-history) .dash-stats { grid-template-columns: 1fr 1fr; }
+  body:not(.view-history) .dash-stat:first-child { grid-column: 1 / -1; }
+}
+
+/* Obligations page */
+.oblig-summary { margin-bottom: 14px; }
+.oblig-rows { display: flex; flex-direction: column; gap: 8px; }
+.oblig-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 12px; border-radius: 10px;
+  border-left: 4px solid var(--text-muted);
+  background: rgba(127, 127, 127, 0.08);
+}
+.oblig-paid { border-left-color: #30D158; }
+.oblig-paid .oblig-status { color: #30D158; font-weight: 600; }
+.oblig-due { border-left-color: #FF9F0A; }
+.oblig-due .oblig-status { color: #FF9F0A; font-weight: 600; }
+.oblig-overdue { border-left-color: #FF453A; }
+.oblig-overdue .oblig-status { color: #FF453A; font-weight: 600; }
+.oblig-missing .oblig-status { font-style: italic; }
+.reserves-total { color: var(--income); }
+#page-obligations #savings-list { margin-top: 14px; }
+@media (max-width: 600px) {
+  .oblig-row { flex-direction: column; align-items: flex-start; }
 }

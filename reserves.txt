@@ -1,0 +1,6 @@
+# Reserves — money set aside to fall back on (courses, months income doesn't cover).
+# YYYY-MM-DD | What | Amount | Where / note        + = added, − = used (e.g. -500.00)
+2026-09-28 | BCIT fund | 500.00 | cheque deposited to RBC
+2026-09-28 | Tax refund | 1072.54 | cheque deposited to RBC
+2026-09-28 | Tax refund | 169.75 | cheque deposited to RBC
+2026-10-03 | Transfer to TFSA | 400.00 | Wealthsimple TFSA

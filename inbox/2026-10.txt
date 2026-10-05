@@ -74,9 +74,11 @@
 2026-09-11 | Dad — via EXTREME | 5000.00 | Dad
 2026-09-21 | Greycor (cash — not deposited yet; don't log the deposit again) | 1500.00 | Income
 2026-09-25 | BC Government (1st payment of $1,100) | 100.00 | Other
-2026-09-28 | ICBC auto insurance | 199.01 | Bills
+2026-09-28 | ICBC auto insurance | 199.01 | Car Costs
 2026-09-30 | Wealthsimple interest | 7.38 | Income
-2026-10-01 | Kenson Realty — rent | 1800.00 | Rent
+2026-10-01 | Kenson Realty — rent | 1800.00 | Housing
+2026-10-01 | 1334407 B.C. Ltd. — rest of Oct rent | 177.54 | Housing
 2026-10-01 | Fairstone | 38.00 | Bills
 2026-10-01 | McDonald's | 16.04 | Food & Coffee
 2026-10-01 | Greycor Project pay (Wealthsimple) | 869.20 | Income
+2026-10-03 | Transfer to TFSA | 400.00 | Savings
