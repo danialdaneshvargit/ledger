@@ -235,19 +235,13 @@ renderDashStats = function () {
   const el = document.getElementById('dash-stats');
   if (!el) return;
   const p = monthPlan(txSelectedMonth || monthKey());
-  const cls = (v) => (v >= 0 ? 'income' : 'expense');
-  const signed = (v) => `${v >= 0 ? '' : '−'}${formatMoney(Math.abs(v))}`;
   const fixedRows = p.rows.filter((r) => r.o.type === 'fixed');
   const paidCount = fixedRows.filter((r) => r.paidAmt > 0).length;
   el.innerHTML = `
-    <div class="dash-stat dash-stat-primary" title="Income minus fixed bills (rent, truck, insurance, phone, subscriptions)">
-      <span class="dash-stat-label">Surplus</span>
-      <span class="dash-stat-value ${cls(p.surplus)}">${signed(p.surplus)}</span>
-      <span class="dash-stat-sub">${monthLabel(p.key)} · income − fixed bills</span>
-    </div>
-    <div class="dash-stat">
+    <div class="dash-stat dash-stat-primary">
       <span class="dash-stat-label">Income</span>
       <span class="dash-stat-value income">${formatMoney(p.income)}</span>
+      <span class="dash-stat-sub">${monthLabel(p.key)}</span>
     </div>
     <div class="dash-stat">
       <span class="dash-stat-label">Fixed Bills</span>
@@ -258,11 +252,6 @@ renderDashStats = function () {
       <span class="dash-stat-label">Spent</span>
       <span class="dash-stat-value expense">${formatMoney(p.spent)}</span>
       <span class="dash-stat-sub">everything else${p.saved ? ` · ${formatMoney(p.saved)} saved` : ''}</span>
-    </div>
-    <div class="dash-stat">
-      <span class="dash-stat-label">Left</span>
-      <span class="dash-stat-value ${cls(p.left)}">${signed(p.left)}</span>
-      <span class="dash-stat-sub">after spending${p.temporary ? ` & ${formatMoney(p.temporary)} temporary` : ''}${p.saved ? ' & savings' : ''}</span>
     </div>`;
 };
 
