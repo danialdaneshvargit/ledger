@@ -1,8 +1,9 @@
 # Obligations — shown on the Obligations page and used for the Dashboard surplus.
-# Name | Amount | monthly or biweekly | First due date | fixed or temporary | words that identify the payment
+# Name | Amount | monthly or biweekly | First due date | fixed or temporary | words that identify the payment | last month (optional, YYYY-MM)
 #   fixed     = paid every month no matter what → Surplus = income − fixed
 #   temporary = until paid off (not counted in surplus)
 # Monthly items are due on the same day-of-month as the first due date; biweekly every 14 days from it.
+# Last month: the item stops showing after that month (e.g. BC Government — 5 payments of $200, Oct 2026 – Feb 2027).
 Rent (Kenson) | 1800.00 | monthly | 2026-10-01 | fixed | kenson, 1334407
 Truck financing | 342.00 | biweekly | 2026-10-12 | fixed | truck loan, truck financing, car loan, ford credit
 ICBC car insurance | 199.01 | monthly | 2026-09-28 | fixed | insurance
@@ -14,5 +15,5 @@ Apple Music | 6.71 | monthly | 2026-10-02 | fixed | apple, apple music
 iCloud+ | 4.47 | monthly | 2026-10-01 | fixed | apple, icloud
 RBC monthly fee | 12.95 | monthly | 2026-09-04 | fixed | rbc monthly fee
 Microsoft 365 (cancel) | 2.24 | monthly | 2026-09-21 | fixed | microsoft
-BC Government | 200.00 | monthly | 2026-10-25 | temporary | bc government
+BC Government | 200.00 | monthly | 2026-10-25 | temporary | bc government | 2027-02
 Fairstone | 38.00 | monthly | 2026-10-01 | temporary | fairstone

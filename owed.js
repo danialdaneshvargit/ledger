@@ -60,6 +60,7 @@ function parseObligations(text) {
       start: p[3],
       type: /temp/i.test(p[4]) ? 'temporary' : 'fixed',
       words: (p[5] || '').toLowerCase().split(',').map((w) => w.trim()).filter(Boolean),
+      until: /^\d{4}-\d{2}$/.test(p[6] || '') ? p[6] : null,
     });
   });
   return items;
@@ -135,6 +136,7 @@ const parseISO = (s) => { const [y, m, d] = s.split('-').map(Number); return new
 function obligDueDates(o, key) {
   const [y, m] = key.split('-').map(Number);
   if (key < o.start.slice(0, 7)) return [];
+  if (o.until && key > o.until) return [];
   if (o.schedule === 'monthly') {
     const last = new Date(y, m, 0).getDate();
     const day = Math.min(parseInt(o.start.slice(8, 10), 10), last);
@@ -190,15 +192,77 @@ function fixedMonthlyAverage() {
     .reduce((s, o) => s + (o.schedule === 'biweekly' ? (o.amount * 26) / 12 : o.amount), 0);
 }
 
-// Fixed costs I can't control — kept OUT of "Spent" and the pie, shown beside Income instead.
-// Rent ($1,800) + truck ($342 × 2) + ICBC insurance (~$200) + Telus phone ≈ $2,900 a month.
-const FIXED_COSTS_MONTHLY = 2900;
-const FIXED_COST_OBLIGATIONS = /^(rent|truck financing|icbc|telus)/i;
+// Fixed costs I can't control — kept OUT of "Spent" and the pie. Tapping the Spent card
+// lists them for the selected month with due dates and paid / still-to-pay status.
+// Rent, truck (biweekly), ICBC insurance, Telus phone, Fairstone, BC Government (until Feb 2027).
+const FIXED_COST_OBLIGATIONS = /^(rent|truck financing|icbc|telus|fairstone|bc government)/i;
 function isFixedCost(t) {
   if (t.type !== 'expense') return false;
   if (t.categoryId === 'cat-housing' || t.categoryId === 'cat-car') return true;
   const o = obligationFor(t);
   return !!(o && FIXED_COST_OBLIGATIONS.test(o.name));
+}
+let fixedPanelOpen = false;
+const shortDay = (iso) => parseISO(iso).toLocaleDateString('en-CA', { month: 'short', day: 'numeric' });
+function fixedCostRows(key) {
+  const today = isoOf(new Date());
+  const current = monthKey();
+  const tx = getMonthTransactions(key);
+  const out = [];
+  obligState.items.filter((o) => FIXED_COST_OBLIGATIONS.test(o.name)).forEach((o) => {
+    const due = obligDueDates(o, key);
+    let paid = tx.filter((t) => obligationFor(t) === o).sort((a, b) => a.date.localeCompare(b.date));
+    if (/^rent/i.test(o.name)) {
+      const extra = tx.filter((t) => t.type === 'expense' && t.categoryId === 'cat-housing' && !paid.includes(t));
+      paid = paid.concat(extra);
+    }
+    if (!due.length && !paid.length) return;
+    const n = Math.max(due.length, paid.length ? 1 : 0);
+    for (let i = 0; i < n; i++) {
+      const date = due[i] || paid[0].date;
+      // rent's two transfers count as one payment; biweekly items match payments in order
+      const pays = due.length > 1 ? (paid[i] ? [paid[i]] : []) : paid;
+      const paidAmt = pays.reduce((s, t) => s + t.amount, 0);
+      let status;
+      if (paidAmt > 0) status = { cls: 'paid', text: `Paid ${shortDay(pays[pays.length - 1].date)}` };
+      else if (key < current || date < today) status = { cls: 'overdue', text: key < current ? 'Not seen' : 'Overdue' };
+      else {
+        const days = owedDaysLeft(date);
+        status = { cls: days <= 7 ? 'soon' : 'due', text: days === 0 ? 'Due today' : days === 1 ? 'Tomorrow' : `In ${days} days` };
+      }
+      const left = o.until ? ` · until ${monthLabel(o.until)}` : '';
+      out.push({ name: o.name, date, amount: paidAmt > 0 ? paidAmt : o.amount, planned: o.amount, paid: paidAmt > 0, status,
+        note: (o.schedule === 'biweekly' ? 'every 2 weeks' : 'monthly') + left });
+    }
+  });
+  return out.sort((a, b) => a.date.localeCompare(b.date));
+}
+function fixedPanelHtml(key) {
+  const rows = fixedCostRows(key);
+  const total = rows.reduce((s, r) => s + r.amount, 0);
+  const paid = rows.filter((r) => r.paid).reduce((s, r) => s + r.amount, 0);
+  const left = total - paid;
+  const [y, m] = key.split('-').map(Number);
+  const mon = new Date(y, m - 1, 1).toLocaleString('en-CA', { month: 'short' });
+  return `
+    <div class="fixed-panel">
+      <div class="fixed-head">
+        <div><h3>Fixed costs · ${monthLabel(key)}</h3><p class="section-hint">Not counted in Spent</p></div>
+        <div class="fixed-totals">
+          <span><em>Paid</em><b class="income">${formatMoney(paid)}</b></span>
+          <span><em>Still to pay</em><b class="expense">${formatMoney(left)}</b></span>
+          <span><em>Total</em><b>${formatMoney(total)}</b></span>
+        </div>
+      </div>
+      <div class="fixed-rows">${rows.map((r) => `
+        <div class="fixed-row ${r.paid ? 'is-paid' : ''}">
+          <div class="fixed-date"><b>${parseInt(r.date.slice(8, 10), 10)}</b><span>${mon}</span></div>
+          <div class="fixed-main"><span class="fixed-name">${escapeHtml(r.name)}</span><span class="fixed-note">${r.note}</span></div>
+          <strong class="fixed-amt">${formatMoney(r.amount)}</strong>
+          <span class="fixed-status st-${r.status.cls}">${r.paid ? '✓ ' : ''}${r.status.text}</span>
+        </div>`).join('') || '<p class="empty-inline">Nothing due this month.</p>'}
+      </div>
+    </div>`;
 }
 
 // ---- Dashboard / History split ---------------------------------------
@@ -250,21 +314,21 @@ renderDashStats = function () {
   const exp = tx.filter((t) => t.type === 'expense' && t.categoryId !== 'cat-savings' && !isFixedCost(t));
   const spent = exp.reduce((s, t) => s + t.amount, 0);
   const saved = tx.filter((t) => t.type === 'expense' && t.categoryId === 'cat-savings').reduce((s, t) => s + t.amount, 0);
-  const pct = income > 0 ? Math.round((spent / income) * 100) : null;
-  const bar = pct === null ? 0 : Math.min(pct, 100);
   const incCount = tx.filter((t) => t.type === 'income').length;
+  const fixedTotal = fixedCostRows(key).reduce((s, r) => s + r.amount, 0);
   el.innerHTML = `
     <div class="dash-stat dash-stat-card">
       <span class="dash-stat-label"><i class="dash-dot income"></i>Income</span>
       <span class="dash-stat-value income">${formatMoney(income)}</span>
-      <span class="dash-stat-sub">${incCount} deposit${incCount === 1 ? '' : 's'}${saved ? ` · ${formatMoney(saved)} saved` : ''} · <span title="Rent $1,800 · Truck $684 · Insurance $200 · Phone $117">$${FIXED_COSTS_MONTHLY.toLocaleString()}/mo fixed costs</span></span>
+      <span class="dash-stat-sub">${incCount} deposit${incCount === 1 ? '' : 's'}${saved ? ` · ${formatMoney(saved)} saved` : ''}</span>
     </div>
-    <div class="dash-stat dash-stat-card">
-      <span class="dash-stat-label"><i class="dash-dot expense"></i>Spent</span>
+    <button type="button" class="dash-stat dash-stat-card dash-spent-btn${fixedPanelOpen ? ' open' : ''}" id="dash-spent-btn" aria-expanded="${fixedPanelOpen}">
+      <span class="dash-stat-label"><i class="dash-dot expense"></i>Spent<i class="dash-chev">›</i></span>
       <span class="dash-stat-value expense">${formatMoney(spent)}</span>
-      <div class="dash-meter${pct !== null && pct > 100 ? ' over' : ''}"><span style="width:${bar}%"></span></div>
-      <span class="dash-stat-sub">${pct === null ? `${exp.length} transactions` : `${pct}% of income · fixed costs not included`}</span>
-    </div>`;
+      <span class="dash-stat-sub">+ $${Math.round(fixedTotal).toLocaleString()} fixed costs · tap for due dates</span>
+    </button>
+    ${fixedPanelOpen ? fixedPanelHtml(key) : ''}`;
+  document.getElementById('dash-spent-btn').onclick = () => { fixedPanelOpen = !fixedPanelOpen; renderDashStats(); };
 };
 
 // ---- Navigation: Dashboard | Obligations | Funds | History ------------
@@ -489,7 +553,7 @@ function setPieHeading() {
   if (!head) return;
   head.innerHTML = ledgerView === 'history'
     ? '<h2>Spending by Category</h2>'
-    : '<div><h2>Everyday Spending</h2><p class="section-hint">By category · rent, truck, insurance &amp; phone not included</p></div>';
+    : '<div><h2>Everyday Spending</h2><p class="section-hint">By category · fixed costs not included</p></div>';
 }
 const _renderPieChartHead = renderPieChart;
 renderPieChart = function (byCat) { setPieHeading(); return _renderPieChartHead(byCat); };
