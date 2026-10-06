@@ -1,6 +1,6 @@
 // owed.js — loaded after app.js (plain file, no base64 step).
 // Layout + money-planning add-on:
-//   • Dashboard = Sep 2026 onward (income minus fixed bills = surplus); History = everything before.
+//   • Dashboard = Sep 2026 onward (Income + total Spent on top); History = everything before.
 //   • Obligations page = fixed + temporary payments, what I owe, reserves, held/invested money.
 //   • Data files (repo root, edited by Claude from the phone):
 //       obligations.txt  recurring payments      owed.txt  balances still owed      reserves.txt  money set aside
@@ -234,24 +234,27 @@ renderDashStats = function () {
   if (ledgerView === 'history') return _renderDashStatsBase();
   const el = document.getElementById('dash-stats');
   if (!el) return;
-  const p = monthPlan(txSelectedMonth || monthKey());
-  const fixedRows = p.rows.filter((r) => r.o.type === 'fixed');
-  const paidCount = fixedRows.filter((r) => r.paidAmt > 0).length;
+  const key = txSelectedMonth || monthKey();
+  const tx = getMonthTransactions(key);
+  const income = sumByType(tx, 'income');
+  const exp = tx.filter((t) => t.type === 'expense' && t.categoryId !== 'cat-savings');
+  const spent = exp.reduce((s, t) => s + t.amount, 0);
+  const saved = tx.filter((t) => t.type === 'expense' && t.categoryId === 'cat-savings').reduce((s, t) => s + t.amount, 0);
+  const pct = income > 0 ? Math.round((spent / income) * 100) : null;
+  const bar = pct === null ? 0 : Math.min(pct, 100);
+  const net = income - spent;
+  const incCount = tx.filter((t) => t.type === 'income').length;
   el.innerHTML = `
-    <div class="dash-stat dash-stat-primary">
-      <span class="dash-stat-label">Income</span>
-      <span class="dash-stat-value income">${formatMoney(p.income)}</span>
-      <span class="dash-stat-sub">${monthLabel(p.key)}</span>
+    <div class="dash-stat dash-stat-card">
+      <span class="dash-stat-label"><i class="dash-dot income"></i>Income</span>
+      <span class="dash-stat-value income">${formatMoney(income)}</span>
+      <span class="dash-stat-sub">${incCount} deposit${incCount === 1 ? '' : 's'}${saved ? ` · ${formatMoney(saved)} saved` : ''}</span>
     </div>
-    <div class="dash-stat">
-      <span class="dash-stat-label">Fixed Bills</span>
-      <span class="dash-stat-value expense">${formatMoney(p.fixed)}</span>
-      <span class="dash-stat-sub">${paidCount}/${fixedRows.length} paid</span>
-    </div>
-    <div class="dash-stat">
-      <span class="dash-stat-label">Spent</span>
-      <span class="dash-stat-value expense">${formatMoney(p.spent)}</span>
-      <span class="dash-stat-sub">everything else${p.saved ? ` · ${formatMoney(p.saved)} saved` : ''}</span>
+    <div class="dash-stat dash-stat-card">
+      <span class="dash-stat-label"><i class="dash-dot expense"></i>Spent</span>
+      <span class="dash-stat-value expense">${formatMoney(spent)}</span>
+      <div class="dash-meter${pct !== null && pct > 100 ? ' over' : ''}"><span style="width:${bar}%"></span></div>
+      <span class="dash-stat-sub">${pct === null ? `${exp.length} transactions` : `${pct}% of income · ${net >= 0 ? formatMoney(net) + ' left' : formatMoney(-net) + ' over'}`}</span>
     </div>`;
 };
 
@@ -470,3 +473,15 @@ function renderOwed() {
 
 const _syncInboxBase = syncInbox;
 syncInbox = function (opts) { loadOwed(); return _syncInboxBase(opts); };
+
+// Pie card heading: on the Dashboard it shows everyday spending only (rent + fixed bills left out).
+function setPieHeading() {
+  const head = document.querySelector('.dash-box-pie .dash-box-head');
+  if (!head) return;
+  head.innerHTML = ledgerView === 'history'
+    ? '<h2>Spending by Category</h2>'
+    : '<div><h2>Everyday Spending</h2><p class="section-hint">By category · rent &amp; fixed bills not included</p></div>';
+}
+const _renderPieChartHead = renderPieChart;
+renderPieChart = function (byCat) { setPieHeading(); return _renderPieChartHead(byCat); };
+setPieHeading();
