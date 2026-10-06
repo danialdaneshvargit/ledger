@@ -190,6 +190,17 @@ function fixedMonthlyAverage() {
     .reduce((s, o) => s + (o.schedule === 'biweekly' ? (o.amount * 26) / 12 : o.amount), 0);
 }
 
+// Fixed costs I can't control — kept OUT of "Spent" and the pie, shown beside Income instead.
+// Rent ($1,800) + truck ($342 × 2) + ICBC insurance (~$200) + Telus phone ≈ $2,900 a month.
+const FIXED_COSTS_MONTHLY = 2900;
+const FIXED_COST_OBLIGATIONS = /^(rent|truck financing|icbc|telus)/i;
+function isFixedCost(t) {
+  if (t.type !== 'expense') return false;
+  if (t.categoryId === 'cat-housing' || t.categoryId === 'cat-car') return true;
+  const o = obligationFor(t);
+  return !!(o && FIXED_COST_OBLIGATIONS.test(o.name));
+}
+
 // ---- Dashboard / History split ---------------------------------------
 const _getTransactionMonthsBase = getTransactionMonths;
 getTransactionMonths = function () { return _getTransactionMonthsBase().filter(eraOk); };
@@ -212,16 +223,15 @@ shiftTxMonth = function (delta) {
 renderInsights = function () {};
 renderPaceChart = function () { renderBarChart(); };
 
-// Pie: never Savings; on the Dashboard also leave out rent, car loan, insurance and
-// other fixed/temporary bills — the pie is for everyday spending only.
+// Pie: never Savings; on the Dashboard also leave out the fixed costs (rent, truck,
+// insurance, phone) so the pie adds up to the Spent card.
 const _renderPieChartBase = renderPieChart;
 renderPieChart = function (byCat) {
   let copy = { ...(byCat || {}) };
   if (ledgerView === 'now' && txSelectedMonth) {
-    const plan = monthPlan(txSelectedMonth);
     copy = {};
     getMonthTransactions(txSelectedMonth).forEach((t) => {
-      if (t.type !== 'expense' || plan.obligTxIds.has(t.id) || t.categoryId === 'cat-housing') return;
+      if (t.type !== 'expense' || isFixedCost(t)) return;
       copy[t.categoryId] = (copy[t.categoryId] || 0) + t.amount;
     });
   }
@@ -237,24 +247,23 @@ renderDashStats = function () {
   const key = txSelectedMonth || monthKey();
   const tx = getMonthTransactions(key);
   const income = sumByType(tx, 'income');
-  const exp = tx.filter((t) => t.type === 'expense' && t.categoryId !== 'cat-savings');
+  const exp = tx.filter((t) => t.type === 'expense' && t.categoryId !== 'cat-savings' && !isFixedCost(t));
   const spent = exp.reduce((s, t) => s + t.amount, 0);
   const saved = tx.filter((t) => t.type === 'expense' && t.categoryId === 'cat-savings').reduce((s, t) => s + t.amount, 0);
   const pct = income > 0 ? Math.round((spent / income) * 100) : null;
   const bar = pct === null ? 0 : Math.min(pct, 100);
-  const net = income - spent;
   const incCount = tx.filter((t) => t.type === 'income').length;
   el.innerHTML = `
     <div class="dash-stat dash-stat-card">
       <span class="dash-stat-label"><i class="dash-dot income"></i>Income</span>
       <span class="dash-stat-value income">${formatMoney(income)}</span>
-      <span class="dash-stat-sub">${incCount} deposit${incCount === 1 ? '' : 's'}${saved ? ` · ${formatMoney(saved)} saved` : ''}</span>
+      <span class="dash-stat-sub">${incCount} deposit${incCount === 1 ? '' : 's'}${saved ? ` · ${formatMoney(saved)} saved` : ''} · <span title="Rent $1,800 · Truck $684 · Insurance $200 · Phone $117">$${FIXED_COSTS_MONTHLY.toLocaleString()}/mo fixed costs</span></span>
     </div>
     <div class="dash-stat dash-stat-card">
       <span class="dash-stat-label"><i class="dash-dot expense"></i>Spent</span>
       <span class="dash-stat-value expense">${formatMoney(spent)}</span>
       <div class="dash-meter${pct !== null && pct > 100 ? ' over' : ''}"><span style="width:${bar}%"></span></div>
-      <span class="dash-stat-sub">${pct === null ? `${exp.length} transactions` : `${pct}% of income · ${net >= 0 ? formatMoney(net) + ' left' : formatMoney(-net) + ' over'}`}</span>
+      <span class="dash-stat-sub">${pct === null ? `${exp.length} transactions` : `${pct}% of income · fixed costs not included`}</span>
     </div>`;
 };
 
@@ -480,7 +489,7 @@ function setPieHeading() {
   if (!head) return;
   head.innerHTML = ledgerView === 'history'
     ? '<h2>Spending by Category</h2>'
-    : '<div><h2>Everyday Spending</h2><p class="section-hint">By category · rent &amp; fixed bills not included</p></div>';
+    : '<div><h2>Everyday Spending</h2><p class="section-hint">By category · rent, truck, insurance &amp; phone not included</p></div>';
 }
 const _renderPieChartHead = renderPieChart;
 renderPieChart = function (byCat) { setPieHeading(); return _renderPieChartHead(byCat); };
