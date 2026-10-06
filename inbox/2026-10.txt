@@ -72,7 +72,7 @@
 2026-10-03 | GLO (rave club) | 18.75 | Leisure
 2026-10-04 | Brunette Cannabis Co. | 11.58 | Smoke & Alcohol
 2026-10-04 | IKEA Coquitlam | 3.15 | Launch & Coffee
-2026-10-04 | Big Way Hot Pot (Park Royal) | 11.63 | Leisure
+2026-10-04 | Big Way Hot Pot (Park Royal) | 11.63 | Food & Coffee
 2026-10-05 | Tim Hortons | 6.08 | Launch & Coffee
 # RBC chequing + Wealthsimple (sent Oct 3)
 2026-09-11 | Dad — via EXTREME | 5000.00 | Dad
@@ -87,7 +87,7 @@
 2026-10-01 | Greycor Project pay (Wealthsimple) | 869.20 | Income
 2026-10-03 | Transfer to TFSA | 400.00 | Savings
 # Card payments (RBC chequing → RBC card) — kept as notes only, not counted:
-# 2026-09-04 | RBC card payment | 1800.00
+# 2026-09-04 | RBC card payment | 1000.00
 # 2026-09-18 | RBC card payment | 1000.00
 # 2026-09-25 | RBC card payment | 1000.00
 # 2026-09-29 | RBC card payment | 1000.00
