@@ -1,5 +1,4 @@
 # October 2026 — appended by Claude from the phone
-2026-09-18 | Metro Motors deposit (refund pending) | 500.00 | Vehicle
 2026-09-19 | Mac Truck (food truck) | 6.00 | Launch & Coffee
 2026-09-21 | IGA | 15.01 | Groceries
 2026-09-21 | Breka Bakery & Cafe | 29.93 | Launch & Coffee
@@ -96,6 +95,7 @@
 # RBC Cash Back card, Oct 5–11 (from screenshots; pending items may repost with a new date)
 2026-10-05 | Real Canadian Superstore | 3.30 | Groceries
 2026-10-05 | Wendy's | 7.76 | Launch & Coffee
+2026-10-05 | Costco | 1.64 | Launch & Coffee
 2026-10-06 | Chevron | 70.11 | Transport
 2026-10-06 | Chevron | 2.61 | Transport
 2026-10-06 | Costco | 79.72 | Groceries
@@ -104,6 +104,7 @@
 2026-10-07 | Real Canadian Superstore | 14.86 | Groceries
 2026-10-07 | Tim Hortons | 3.90 | Launch & Coffee
 2026-10-07 | Costco | 14.69 | Groceries
+2026-10-07 | Costco | 1.64 | Launch & Coffee
 2026-10-07 | Chevron | 250.00 | Transport
 2026-10-08 | Tim Hortons | 3.90 | Launch & Coffee
 2026-10-08 | Yaas Grill | 30.22 | Launch & Coffee
@@ -111,6 +112,7 @@
 2026-10-10 | Home Depot | 8.94 | Shopping
 2026-10-10 | TST-Freds West Vancouver | 16.06 | Leisure
 2026-10-10 | McDonald's | 15.19 | Launch & Coffee
+2026-10-10 | Costco | 1.64 | Launch & Coffee
 2026-10-10 | Chevron | 116.95 | Transport
 2026-10-11 | Tim Hortons | 3.35 | Launch & Coffee
 2026-10-11 | LS The Portside Pub | 17.19 | Leisure
