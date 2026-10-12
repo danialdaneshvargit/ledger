@@ -105,7 +105,6 @@
 2026-10-07 | Tim Hortons | 3.90 | Launch & Coffee
 2026-10-07 | Costco | 14.69 | Groceries
 2026-10-07 | Costco | 1.64 | Launch & Coffee
-2026-10-07 | Chevron | 250.00 | Transport
 2026-10-08 | Tim Hortons | 3.90 | Launch & Coffee
 2026-10-08 | Yaas Grill | 30.22 | Launch & Coffee
 2026-10-09 | Tim Hortons | 2.02 | Launch & Coffee
