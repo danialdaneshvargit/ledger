@@ -558,3 +558,73 @@ function setPieHeading() {
 const _renderPieChartHead = renderPieChart;
 renderPieChart = function (byCat) { setPieHeading(); return _renderPieChartHead(byCat); };
 setPieHeading();
+
+// ---- Obligations page: next 6 months (replaces the older layout above) ------
+// Source: obligations.txt (recurring) + owed.txt (one-off balances).
+// BC Government is skipped from owed.txt because obligations.txt already counts its $200/month.
+const OBLIG_GROUP_ORDER = ['Rent', 'Car', 'Insurance', 'Phone', 'Subscriptions', 'Other'];
+function obligGroupOf(o) {
+  const n = o.name;
+  if (/^rent/i.test(n)) return 'Rent';
+  if (/truck|car loan/i.test(n)) return 'Car';
+  if (/icbc|insurance/i.test(n)) return 'Insurance';
+  if (/telus|phone/i.test(n)) return 'Phone';
+  if (/claude|chatgpt|youtube|apple music|icloud|microsoft/i.test(n)) return 'Subscriptions';
+  return 'Other';
+}
+function obligMonthView(key) {
+  const groups = {};
+  OBLIG_GROUP_ORDER.forEach((g) => { groups[g] = { total: 0, lines: [] }; });
+  obligState.items.forEach((o) => {
+    const due = obligDueDates(o, key);
+    if (!due.length) return;
+    const g = groups[obligGroupOf(o)];
+    const amt = o.amount * due.length;
+    const when = due.length > 1
+      ? `${due.length} payments · ${due.map((d) => formatDisplayDate(d)).join(', ')}`
+      : `due ${formatDisplayDate(due[0])}`;
+    g.total += amt;
+    g.lines.push({ name: o.name, amount: amt, note: when });
+  });
+  owedState.items.forEach((x) => {
+    if (!x.date || x.date.slice(0, 7) !== key) return;
+    if (/bc government/i.test(x.what)) return;
+    const g = groups.Other;
+    g.total += x.amount;
+    g.lines.push({ name: x.what, amount: x.amount, note: `due ${formatDisplayDate(x.date)}` });
+  });
+  return groups;
+}
+function renderObligations() {
+  const set = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+  const base = monthKey();
+  const [y, m] = base.split('-').map(Number);
+  const cards = [0, 1, 2, 3, 4, 5].map((i) => {
+    const d = new Date(y, m - 1 + i, 1);
+    const key = `${d.getFullYear()}-${pad2n(d.getMonth() + 1)}`;
+    const groups = obligMonthView(key);
+    const total = OBLIG_GROUP_ORDER.reduce((s, g) => s + groups[g].total, 0);
+    const body = OBLIG_GROUP_ORDER.filter((g) => groups[g].lines.length).map((g) => `
+      <div class="oblig-group-title"><span>${g}</span><strong>${formatMoney(groups[g].total)}</strong></div>
+      <div class="oblig-rows">${groups[g].lines.map((l) => `
+        <div class="oblig-row">
+          <div class="owed-main">
+            <span class="owed-what">${escapeHtml(l.name)}</span>
+            <span class="owed-note">${escapeHtml(l.note)}</span>
+          </div>
+          <div class="owed-side"><strong class="owed-amt">${formatMoney(l.amount)}</strong></div>
+        </div>`).join('')}</div>`).join('');
+    return `
+      <div class="card owed-card">
+        <div class="owed-head">
+          <div><h2>${monthLabel(key)}</h2><p class="section-hint">${key === base ? 'This month' : ' '}</p></div>
+          <span class="owed-total">${formatMoney(total)}</span>
+        </div>
+        ${body || '<p class="empty-inline">Nothing due.</p>'}
+      </div>`;
+  }).join('');
+  set('oblig-summary', '');
+  set('oblig-fixed', `<p class="section-hint">What's due, next six months</p>${cards}`);
+  set('oblig-temp', '');
+  if (typeof renderSavingsList === 'function') renderSavingsList();
+}
