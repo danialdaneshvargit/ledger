@@ -61,7 +61,7 @@
 2026-10-19 | Uber | 19.82 | Transport
 2026-10-19 | Tim Hortons | 2.02 | Launch & Coffee
 2026-10-19 | Walmart | 37.31 | Groceries
-2026-10-20 | Gamex | 8.41 | Shopping
+2026-10-20 | Gamex | 8.41 | Leisure
 2026-10-20 | Walmart | 24.74 | Groceries
 2026-10-20 | Uber | 24.21 | Transport
 2026-10-20 | Saint Germain Bakery | 2.09 | Launch & Coffee
@@ -101,7 +101,8 @@
 2026-10-30 | PayByPhone parking | 2.05 | Transport
 2026-10-30 | Burrata Pizzeria | 14.25 | Launch & Coffee
 2026-10-31 | Earls Yaletown | 17.68 | Leisure
-2026-10-31 | Square — 1459640 B.C. Ltd. | 57.50 | Leisure
+2026-10-31 | Square — 1459640 B.C. Ltd. (57.50 minus 25 friend paid back) | 32.50 | Leisure
+# Note: friend's 25.00 e-transfer into RBC chequing (~Oct 31) is the payback for the line above — do NOT log it as income
 2026-10-31 | BC Liquor | 18.76 | Smoke & Alcohol
 2026-11-01 | JJ Bean Coffee | 4.02 | Launch & Coffee
 2026-11-01 | Costco | 8.39 | Launch & Coffee
