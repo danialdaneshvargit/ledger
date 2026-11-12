@@ -1,0 +1,113 @@
+# November 2026 — appended by Claude from the phone
+# RBC Cash Back card — Aug 9–17 (gap, never logged)
+2026-08-09 | Starbucks | 6.93 | Launch & Coffee
+2026-08-09 | Sport Chek | 44.80 | Shopping
+2026-08-10 | Domino's Pizza | 13.64 | Launch & Coffee
+2026-08-10 | Subway | 10.49 | Launch & Coffee
+2026-08-11 | Lime | 3.36 | Transport
+2026-08-12 | Domino's Pizza | 13.64 | Launch & Coffee
+2026-08-12 | Tim Hortons | 11.01 | Launch & Coffee
+2026-08-13 | McDonald's | 12.86 | Launch & Coffee
+2026-08-13 | Compass Card | 10.00 | Transport
+2026-08-13 | Tim Hortons | 4.71 | Launch & Coffee
+2026-08-13 | Basha Waterfront | 13.11 | Launch & Coffee
+2026-08-13 | H&M | 39.47 | Shopping
+2026-08-14 | Apple.com/Bill | 19.03 | Bills
+2026-08-14 | Chevron (Surrey) | 14.32 | Transport
+2026-08-14 | Uber | 13.11 | Transport
+2026-08-14 | Uber | 20.31 | Transport
+2026-08-14 | Numero Uno Pizza | 8.00 | Launch & Coffee
+2026-08-14 | Compass Card | 6.70 | Transport
+2026-08-15 | Lime | 3.36 | Transport
+2026-08-15 | Freshslice Pizza | 3.41 | Launch & Coffee
+2026-08-15 | River Rock Casino | 7.51 | Leisure
+2026-08-16 | Subway | 13.39 | Launch & Coffee
+2026-08-16 | IGA | 28.16 | Groceries
+2026-08-16 | McDonald's | 1.05 | Launch & Coffee
+2026-08-17 | Lyft | 51.83 | Transport
+2026-08-17 | McDonald's | 3.15 | Launch & Coffee
+2026-08-17 | Subway | 13.85 | Launch & Coffee
+# RBC Cash Back card — Oct 7 – Nov 6 statement (Oct 5–11 were already in 2026-10.txt)
+# Skipped: Metro Motors $500 charge Sep 18 + $500 refund Oct 10 (cancel out); Walmart $32.45 return netted into Oct 18 Walmart
+2026-10-07 | Wendy's | 7.76 | Launch & Coffee
+2026-10-11 | Walmart (North Van) | 24.70 | Groceries
+2026-10-11 | Quantum 1 Cannabis | 6.14 | Smoke & Alcohol
+2026-10-12 | OpenAI ChatGPT | 28.00 | Bills
+2026-10-12 | IKEA Coquitlam | 14.98 | Shopping
+2026-10-12 | IKEA Coquitlam | 3.15 | Launch & Coffee
+2026-10-12 | PayByPhone parking | 3.80 | Transport
+2026-10-13 | Tim Hortons | 2.02 | Launch & Coffee
+2026-10-13 | Chevron | 60.01 | Transport
+2026-10-13 | North Shore Cannabis | 42.50 | Smoke & Alcohol
+2026-10-14 | Wendy's | 14.36 | Launch & Coffee
+2026-10-14 | Tim Hortons | 3.90 | Launch & Coffee
+2026-10-14 | Walmart | 9.05 | Groceries
+2026-10-15 | Big Way Hot Pot (Park Royal) | 11.34 | Launch & Coffee
+2026-10-15 | Tim Hortons | 4.71 | Launch & Coffee
+2026-10-16 | Apple.com/Bill | 19.03 | Bills
+2026-10-16 | Apple.com/Bill | 18.50 | Bills
+2026-10-16 | Costco | 3.21 | Launch & Coffee
+2026-10-16 | Chevron | 116.42 | Transport
+2026-10-17 | TST-Freds West Vancouver | 15.64 | Leisure
+2026-10-17 | IKEA Coquitlam | 3.94 | Launch & Coffee
+2026-10-17 | Tim Hortons | 2.02 | Launch & Coffee
+2026-10-18 | The North Face (McArthurGlen) | 87.36 | Shopping
+2026-10-18 | Under Armour (McArthurGlen) | 16.80 | Shopping
+2026-10-18 | IKEA Coquitlam | 36.93 | Shopping
+2026-10-18 | Walmart (Burnaby) — after $32.45 return | 62.61 | Groceries
+2026-10-18 | Shiraz Farm Market | 6.34 | Groceries
+2026-10-18 | Parsian Market | 14.22 | Groceries
+2026-10-18 | Parsian Market | 5.98 | Groceries
+2026-10-19 | Uber | 19.82 | Transport
+2026-10-19 | Tim Hortons | 2.02 | Launch & Coffee
+2026-10-19 | Walmart | 37.31 | Groceries
+2026-10-20 | Gamex | 8.41 | Shopping
+2026-10-20 | Walmart | 24.74 | Groceries
+2026-10-20 | Uber | 24.21 | Transport
+2026-10-20 | Saint Germain Bakery | 2.09 | Launch & Coffee
+2026-10-20 | Tim Hortons | 3.90 | Launch & Coffee
+2026-10-20 | Microsoft 365 | 2.24 | Bills
+2026-10-21 | Tim Hortons | 2.32 | Launch & Coffee
+2026-10-21 | Chevron | 55.19 | Transport
+2026-10-21 | Tim Hortons | 5.24 | Launch & Coffee
+2026-10-22 | PayByPhone parking | 2.30 | Transport
+2026-10-22 | Tim Hortons | 5.15 | Launch & Coffee
+2026-10-22 | Tim Hortons | 10.79 | Launch & Coffee
+2026-10-23 | Costco | 1.64 | Launch & Coffee
+2026-10-23 | Tim Hortons | 5.15 | Launch & Coffee
+2026-10-23 | Tim Hortons | 14.15 | Launch & Coffee
+2026-10-23 | Cactus Club Yaletown | 23.85 | Leisure
+2026-10-23 | PayByPhone parking | 2.81 | Transport
+2026-10-23 | Esso | 80.00 | Transport
+2026-10-23 | The Local Kitsilano | 40.61 | Leisure
+2026-10-24 | A&W | 9.72 | Launch & Coffee
+2026-10-24 | Tim Hortons | 2.32 | Launch & Coffee
+2026-10-24 | Winners | 33.59 | Shopping
+2026-10-24 | Subway | 12.06 | Launch & Coffee
+2026-10-24 | Telus Mobility | 111.76 | Bills
+2026-10-25 | Earls Ambleside | 42.86 | Leisure
+2026-10-25 | Celebrities (club) | 30.00 | Leisure
+2026-10-25 | Esso | 4.02 | Transport
+2026-10-25 | Thrifty Foods | 34.07 | Groceries
+2026-10-26 | Costco | 75.77 | Groceries
+2026-10-26 | Costco | 1.64 | Launch & Coffee
+2026-10-26 | Tim Hortons | 7.15 | Launch & Coffee
+2026-10-27 | Petro-Canada | 4.80 | Transport
+2026-10-27 | Walmart | 29.57 | Groceries
+2026-10-28 | Square — Kerrisdale | 13.80 | Launch & Coffee
+2026-10-29 | Tim Hortons | 2.02 | Launch & Coffee
+2026-10-30 | Tim Hortons | 2.02 | Launch & Coffee
+2026-10-30 | PayByPhone parking | 3.86 | Transport
+2026-10-30 | PayByPhone parking | 2.05 | Transport
+2026-10-30 | Burrata Pizzeria | 14.25 | Launch & Coffee
+2026-10-31 | Earls Yaletown | 17.68 | Leisure
+2026-10-31 | Square — 1459640 B.C. Ltd. | 57.50 | Leisure
+2026-10-31 | BC Liquor | 18.76 | Smoke & Alcohol
+2026-11-01 | JJ Bean Coffee | 4.02 | Launch & Coffee
+2026-11-01 | Costco | 8.39 | Launch & Coffee
+2026-11-01 | Yaas Grill | 25.18 | Launch & Coffee
+2026-11-02 | Apple.com/Bill | 4.47 | Bills
+2026-11-02 | Starbucks | 2.57 | Launch & Coffee
+2026-11-02 | Costco | 1.64 | Launch & Coffee
+2026-11-02 | Tim Hortons | 2.32 | Launch & Coffee
+2026-11-03 | Apple.com/Bill | 31.36 | Bills
