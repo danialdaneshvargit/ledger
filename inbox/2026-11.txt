@@ -121,3 +121,7 @@
 2026-11-09 | Bed frame (cash) | 110.00 | Shopping
 2026-11-10 | Lunch (cash) | 20.00 | Launch & Coffee
 2026-11-12 | Cinema (cash) | 40.00 | Leisure
+# RBC card — pending Nov 13–14 (Home Depot $111.52 Nov 13 skipped: being refunded)
+2026-11-13 | Tim Hortons | 11.33 | Launch & Coffee
+2026-11-14 | Cafe Villaggio | 12.29 | Launch & Coffee
+2026-11-14 | PayByPhone parking | 1.45 | Transport
