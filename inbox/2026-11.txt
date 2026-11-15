@@ -112,7 +112,7 @@
 2026-11-02 | Costco | 1.64 | Launch & Coffee
 2026-11-02 | Tim Hortons | 2.32 | Launch & Coffee
 2026-11-03 | Apple.com/Bill | 31.36 | Bills
-# Cash spending — $300 total, all accounted for. Exact dates unknown, spread over Nov 4–13 (the days after the last card record).
+# Cash spending — $260 (cinema turned out to be the $35 e-transfer, not cash). Exact dates unknown, spread over Nov 4–13 (the days after the last card record).
 # When the RBC debit comes in: the cash withdrawal(s) behind this $300 are already covered here — don't log them again.
 2026-11-05 | Canadian Tire (cash) | 35.00 | Shopping
 2026-11-06 | Lunch (cash) | 25.00 | Launch & Coffee
@@ -120,13 +120,13 @@
 2026-11-08 | Groceries (cash) | 20.00 | Groceries
 2026-11-09 | Bed frame (cash) | 110.00 | Shopping
 2026-11-10 | Lunch (cash) | 20.00 | Launch & Coffee
-2026-11-12 | Cinema (cash) | 40.00 | Leisure
 # RBC card — pending Nov 13–14 (Home Depot $111.52 Nov 13 skipped: being refunded)
 2026-11-13 | Tim Hortons | 11.33 | Launch & Coffee
 2026-11-14 | Cafe Villaggio | 12.29 | Launch & Coffee
 2026-11-14 | PayByPhone parking | 1.45 | Transport
 # Wealthsimple (from screenshots, Oct 4 – Nov 14). Transfers to his own account (Danial Daneshvar: Nov 1 2000, Nov 4 60, Nov 7 20, Nov 10 50, Nov 11 50) not counted.
-# Still to ask: Alireza e-transfers (Oct 7 400, Oct 9 300, Nov 11 35), Janica Booth (Oct 8 15), VanHaus Gruppe +1288.81 (Oct 13)
+# Alireza = Soroosh. Oct 7 $400 + Oct 9 $300 were a loan he paid back — not counted; when his repayment shows in RBC/TD, don't log it as income.
+# VanHaus Gruppe +1288.81 (Oct 13) = old apartment deposit back — taken off the Sep 3 VanHaus line in 2026-09.txt.
 2026-10-15 | Greycor Project pay (Wealthsimple) | 1526.11 | Income
 2026-10-22 | Transfer to TFSA | 50.00 | Savings
 2026-10-29 | Greycor Project pay (Wealthsimple) | 1423.05 | Income
@@ -134,3 +134,5 @@
 2026-10-29 | BCIT tuition | 3770.00 | Tuition
 2026-10-31 | Wealthsimple interest | 10.11 | Income
 2026-11-12 | Greycor Project pay (Wealthsimple) | 1441.01 | Income
+2026-10-08 | Janica Booth — standing light | 15.00 | Shopping
+2026-11-11 | Cinema (e-transfer to Soroosh) | 35.00 | Leisure
