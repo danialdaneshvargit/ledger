@@ -102,7 +102,7 @@
 2026-10-30 | Burrata Pizzeria | 14.25 | Launch & Coffee
 2026-10-31 | Earls Yaletown | 17.68 | Leisure
 2026-10-31 | Square — 1459640 B.C. Ltd. (57.50 minus 25 friend paid back) | 32.50 | Leisure
-# Note: friend's 25.00 e-transfer into RBC chequing (~Oct 31) is the payback for the line above — do NOT log it as income
+# Note: friend's 25.00 e-transfer into RBC chequing (Nov 9, "LY") is the payback for the line above — not logged as income
 2026-10-31 | BC Liquor | 18.76 | Smoke & Alcohol
 2026-11-01 | JJ Bean Coffee | 4.02 | Launch & Coffee
 2026-11-01 | Costco | 8.39 | Launch & Coffee
@@ -113,7 +113,7 @@
 2026-11-02 | Tim Hortons | 2.32 | Launch & Coffee
 2026-11-03 | Apple.com/Bill | 31.36 | Bills
 # Cash spending — $260 (cinema turned out to be the $35 e-transfer, not cash). Exact dates unknown, spread over Nov 4–13 (the days after the last card record).
-# When the RBC debit comes in: the cash withdrawal(s) behind this $300 are already covered here — don't log them again.
+# When the cash withdrawal shows on a statement: it's already covered here — don't log it again.
 2026-11-05 | Canadian Tire (cash) | 35.00 | Shopping
 2026-11-06 | Lunch (cash) | 25.00 | Launch & Coffee
 2026-11-07 | Cactus Club (cash) | 50.00 | Leisure
@@ -125,7 +125,7 @@
 2026-11-14 | Cafe Villaggio | 12.29 | Launch & Coffee
 2026-11-14 | PayByPhone parking | 1.45 | Transport
 # Wealthsimple (from screenshots, Oct 4 – Nov 14). Transfers to his own account (Danial Daneshvar: Nov 1 2000, Nov 4 60, Nov 7 20, Nov 10 50, Nov 11 50) not counted.
-# Alireza = Soroosh. Oct 7 $400 + Oct 9 $300 were a loan he paid back — not counted; when his repayment shows in RBC/TD, don't log it as income.
+# Alireza = Soroosh. Oct 7 $400 + Oct 9 $300 were a loan he paid back (Oct 15 +700 into RBC) — neither side counted.
 # VanHaus Gruppe +1288.81 (Oct 13) = old apartment deposit back — taken off the Sep 3 VanHaus line in 2026-09.txt.
 2026-10-15 | Greycor Project pay (Wealthsimple) | 1526.11 | Income
 2026-10-22 | Transfer to TFSA | 50.00 | Savings
@@ -136,3 +136,14 @@
 2026-11-12 | Greycor Project pay (Wealthsimple) | 1441.01 | Income
 2026-10-08 | Janica Booth — standing light | 15.00 | Shopping
 2026-11-11 | Cinema (e-transfer to Soroosh) | 35.00 | Leisure
+# RBC chequing Oct 1 – Nov 12 (pasted). Oct 1 rent/Fairstone/McDonald's were already in 2026-10.txt.
+# Not counted: Oct 5 2×1000 + Oct 28 247.93 (card payments), Oct 15 +700 Soroosh payback, Nov 2 +2000 and Nov 12 −35 (own accounts), Nov 9 +25 (friend payback, already netted Oct 31)
+# Still to ask: Nov 3 +71.81 from 1594639 B.C. Ltd.
+2026-10-06 | RBC Monthly Fee | 12.95 | Bills
+2026-10-13 | TD loan — truck payment | 342.82 | Vehicle
+2026-10-26 | TD loan — truck payment | 342.82 | Vehicle
+2026-10-27 | ICBC auto insurance | 198.97 | Vehicle
+2026-11-02 | Kenson Realty — rent | 1800.00 | Rent
+2026-11-02 | Fairstone | 38.00 | Bills
+2026-11-06 | RBC Monthly Fee | 12.95 | Bills
+2026-11-09 | TD loan — truck payment | 342.82 | Vehicle
