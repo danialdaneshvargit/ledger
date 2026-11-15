@@ -112,7 +112,7 @@
 2026-11-02 | Costco | 1.64 | Launch & Coffee
 2026-11-02 | Tim Hortons | 2.32 | Launch & Coffee
 2026-11-03 | Apple.com/Bill | 31.36 | Bills
-# Cash spending — from the $300 cash job (Nov 3). $260 listed below; $40 still unknown. Exact dates unknown, spread over Nov 4–13 (the days after the last card record).
+# Cash spending — from the $300 cash job (Nov 3), all $300 listed below. Exact dates unknown, spread over Nov 4–13 (the days after the last card record).
 2026-11-03 | Cash job — one day on site (cash) | 300.00 | Income
 2026-11-05 | Canadian Tire (cash) | 35.00 | Shopping
 2026-11-06 | Lunch (cash) | 25.00 | Launch & Coffee
@@ -120,6 +120,8 @@
 2026-11-08 | Groceries (cash) | 20.00 | Groceries
 2026-11-09 | Bed frame (cash) | 110.00 | Shopping
 2026-11-10 | Lunch (cash) | 20.00 | Launch & Coffee
+2026-11-11 | Groceries (cash) | 20.00 | Groceries
+2026-11-12 | Lunch (cash) | 20.00 | Launch & Coffee
 # RBC card — pending Nov 13–14 (Home Depot $111.52 Nov 13 skipped: being refunded)
 2026-11-13 | Tim Hortons | 11.33 | Launch & Coffee
 2026-11-14 | Cafe Villaggio | 12.29 | Launch & Coffee
@@ -148,7 +150,7 @@
 2026-11-09 | TD loan — truck payment | 342.82 | Vehicle
 2026-11-03 | Steamoji (e-transfer, 1594639 B.C. Ltd.) | 71.81 | Income
 # TD chequing Sep 16 – Nov 14 (pasted). Own-account transfers all matched: WS→RBC Nov 1/2 2000; WS→TD Nov 4 60, Nov 7/9 20, Nov 10 50, Nov 11/12 50; RBC→TD Nov 12 35.
-# Cineplex Nov 10 38.34 minus 35.18 refund Nov 12 = 3.16 kept. Still to ask: TD "SEND E-TFR" $20 (shows Nov 16).
+# Cineplex Nov 10 38.34 minus 35.18 refund Nov 12 = 3.16 kept.
 2026-09-16 | TD overdraft protection fee | 5.00 | Bills
 2026-09-29 | TD monthly fee | 3.95 | Bills
 2026-09-29 | TD overdraft interest | 0.10 | Bills
@@ -167,3 +169,4 @@
 2026-11-12 | Province of BC | 31.50 | Other
 2026-11-13 | Real Canadian Superstore | 30.36 | Groceries
 2026-11-13 | Tim Hortons | 2.32 | Launch & Coffee
+2026-11-14 | Shakepay — Bitcoin (TD e-transfer, posts Nov 16) | 20.00 | Savings
