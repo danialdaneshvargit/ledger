@@ -80,7 +80,7 @@
 2026-09-02 | Subway | 8.67 | Launch & Coffee
 2026-09-02 | Apple.com/Bill | 6.71 | Bills
 2026-09-02 | Apple.com/Bill | 3.21 | Bills
-2026-09-03 | VanHaus Gruppe | 2600.00 | Rent
+2026-09-03 | VanHaus Gruppe (2600 minus 1288.81 deposit back Oct 13) | 1311.19 | Rent
 2026-09-03 | West Coast Sigh Pay | 1917.06 | Income
 2026-09-03 | Document translation (ICBC) | 30.00 | Other
 2026-09-03 | JJ Bean Coffee | 13.40 | Launch & Coffee
