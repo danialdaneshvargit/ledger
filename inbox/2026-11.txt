@@ -125,3 +125,12 @@
 2026-11-13 | Tim Hortons | 11.33 | Launch & Coffee
 2026-11-14 | Cafe Villaggio | 12.29 | Launch & Coffee
 2026-11-14 | PayByPhone parking | 1.45 | Transport
+# Wealthsimple (from screenshots, Oct 4 – Nov 14). Transfers to his own account (Danial Daneshvar: Nov 1 2000, Nov 4 60, Nov 7 20, Nov 10 50, Nov 11 50) not counted.
+# Still to ask: Alireza e-transfers (Oct 7 400, Oct 9 300, Nov 11 35), Janica Booth (Oct 8 15), VanHaus Gruppe +1288.81 (Oct 13)
+2026-10-15 | Greycor Project pay (Wealthsimple) | 1526.11 | Income
+2026-10-22 | Transfer to TFSA | 50.00 | Savings
+2026-10-29 | Greycor Project pay (Wealthsimple) | 1423.05 | Income
+2026-10-29 | BC Government (2nd payment) | 200.00 | Other
+2026-10-29 | BCIT tuition | 3770.00 | Tuition
+2026-10-31 | Wealthsimple interest | 10.11 | Income
+2026-11-12 | Greycor Project pay (Wealthsimple) | 1441.01 | Income
