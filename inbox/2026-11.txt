@@ -112,9 +112,9 @@
 2026-11-02 | Costco | 1.64 | Launch & Coffee
 2026-11-02 | Tim Hortons | 2.32 | Launch & Coffee
 2026-11-03 | Apple.com/Bill | 31.36 | Bills
-# Cash spending he remembers (exact dates unknown — dated today). Rest of the cash still to figure out.
-2026-11-14 | Canadian Tire (cash) | 35.00 | Shopping
-2026-11-14 | Cactus Club (cash) | 50.00 | Leisure
-2026-11-14 | Cinema (cash) | 40.00 | Leisure
-2026-11-14 | Bed frame (cash) | 110.00 | Shopping
-2026-11-14 | Lunch (cash) | 25.00 | Launch & Coffee
+# Cash spending he remembers — exact dates unknown, spread over Nov 4–13 (the days after the last card record). Rest of the cash still to figure out.
+2026-11-05 | Canadian Tire (cash) | 35.00 | Shopping
+2026-11-06 | Lunch (cash) | 25.00 | Launch & Coffee
+2026-11-07 | Cactus Club (cash) | 50.00 | Leisure
+2026-11-09 | Bed frame (cash) | 110.00 | Shopping
+2026-11-12 | Cinema (cash) | 40.00 | Leisure
